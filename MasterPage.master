@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!--    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" /> -->
+
+        <asp:SiteMapDataSource ID="UserSiteMapDataSource" runat="server" SiteMapProvider="UserSiteMap" />
+        <asp:SiteMapDataSource ID="AdminSiteMapDataSource" runat="server" SiteMapProvider="AdminSiteMap" />
+
+        <div id="wrapper">
+            <div id="loginheader">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/UserMain.aspx" Font-Underline="False">
+                <span id="titlered">POLAK ZA</span><span id="titlewhite">  GRANICĄ</span>
+                </asp:HyperLink>
+            </div>
+            <br />
+            <br />
+            <asp:Label ID="userLabel" runat="server" Text="" Visible="false"></asp:Label>
+            <div id="masterheader">
+                <div id="masterleft">
+                    <div id="menu">
+                        <asp:HyperLink CssClass="masterlink" ID="menuItem1HyperLink" runat="server" NavigateUrl="~/User/UserMain.aspx">
+                            <div runat="server" id="menuitem1" class="mastermainmenu">
+                                STRONA <br />GŁÓWNA
+                                <br />
+                                <asp:Image ID="Image7" runat="server" ImageUrl="~/images/polandicon.png" Width="50%"/>
+                            </div>
+                        </asp:HyperLink>
+
+                        <asp:HyperLink CssClass="masterlink" ID="menuitem2HyperLink" runat="server" NavigateUrl="~/User/GroupAddCreate.aspx">
+                            <div runat="server" id="menuitem2" class="mastermainmenu">
+                                DOŁĄCZ DO<br /> GRUPY
+                                <br />
+                                <asp:Image ID="Image6" runat="server" ImageUrl="~/images/joinicon.png" Width="50%"/>
+                            </div>
+                        </asp:HyperLink>
+
+                        <asp:HyperLink CssClass="masterlink" ID="menuitem3HyperLink" runat="server" NavigateUrl="~/User/Messages.aspx">
+                            <div runat="server" id="menuitem3" class="mastermainmenu">
+                                WIADOMOŚCI
+                                <br />
+                                <br />
+                                <asp:Image ID="Image2" runat="server" ImageUrl="~/images/messagesicon.png" Width="50%"/>
+                            </div>
+                        </asp:HyperLink>
+
+                        <asp:HyperLink CssClass="masterlink" ID="menuitem4HyperLink" runat="server" NavigateUrl="~/User/Friends.aspx">
+                            <div runat="server" id="menuitem4" class="mastermainmenu">
+                                ZNAJOMI
+                                <br />
+                                <br />
+                                <asp:Image ID="Image3" runat="server" ImageUrl="~/images/friendsicon.png" Width="50%"/>
+                            </div>
+                        </asp:HyperLink>
+
+                        <asp:HyperLink CssClass="masterlink" ID="menuitemHyperLink" runat="server" NavigateUrl="~/User/UserSettings.aspx">
+                            <div runat="server" id="menuitem5" class="mastermainmenu">
+                                USTAWIENIA <br /> KONTA
+                                <br />
+                                <asp:Image ID="Image4" runat="server" ImageUrl="~/images/settingsicon.png" Width="50%"/>
+                            </div>
+                        </asp:HyperLink>
+
+                        <asp:HyperLink CssClass="masterlink" ID="menuitem6HyperLink" runat="server" NavigateUrl="~/Admin/AdminPanel.aspx">
+                            <div runat="server" id="menuitem6" class="mastermainmenu">
+                                ADMIN
+                                <br />
+                                <br />
+                                <asp:Image ID="Image5" runat="server" ImageUrl="~/images/adminicon.png" Width="50%"/>
+                            </div>
+                        </asp:HyperLink>
+
+                    </div>
+                    <!--<div id="menu">
+                        <asp:LoginView ID="LoginView4" runat="server">
+                            <RoleGroups>
+
+                                <asp:RoleGroup Roles="user">
+                                    <ContentTemplate>
+                                        <asp:Menu ID="Menu1" DataSourceID="UserSiteMapDataSource" runat="server" StaticDisplayLevels="7" Orientation="Horizontal" CssClass="topmenu" StaticMenuItemStyle-CssClass="dropmenunode" DynamicMenuItemStyle-CssClass="dynamicmenunode" StaticHoverStyle-BackColor="#ff3333" StaticHoverStyle-ForeColor="White" DynamicHoverStyle-BackColor="#f2f2f2" DynamicHoverStyle-ForeColor="red" DynamicSelectedStyle-ForeColor="red">
+                                        </asp:Menu>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                                <asp:RoleGroup Roles="admin">
+                                    <ContentTemplate>
+                                        <asp:Menu ID="Menu" DataSourceID="AdminSiteMapDataSource" runat="server" StaticDisplayLevels="7" Orientation="Horizontal" CssClass="topmenu" StaticMenuItemStyle-CssClass="dropmenunode" DynamicMenuItemStyle-CssClass="dynamicmenunode" StaticHoverStyle-BackColor="#ff3333" StaticHoverStyle-ForeColor="White" DynamicHoverStyle-BackColor="#f2f2f2" DynamicHoverStyle-ForeColor="red" DynamicSelectedStyle-ForeColor="red">
+                                        </asp:Menu>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                            </RoleGroups>
+
+
+                        </asp:LoginView>
+                    </div> -->
+                    <div id="dropdown">
+                        <center>
+                        <asp:LoginView ID="LoginView3" runat="server">
+
+                            <RoleGroups>
+
+                                <asp:RoleGroup Roles="user">
+                                    <ContentTemplate>
+                                        <asp:Menu ID="Menu1" DataSourceID="UserSiteMapDataSource" runat="server" StaticDisplayLevels="1" Orientation="Horizontal" CssClass="topmenudrop" StaticMenuItemStyle-CssClass="dropmenunode" DynamicMenuItemStyle-CssClass="dynamicmenunode" StaticHoverStyle-BackColor="#ff3333" StaticHoverStyle-ForeColor="White" StaticSelectedStyle-BackColor="#ffe6e6" DynamicHoverStyle-BackColor="#f2f2f2" DynamicHoverStyle-ForeColor="red" DynamicSelectedStyle-ForeColor="red">
+                                        </asp:Menu>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                                <asp:RoleGroup Roles="admin">
+                                    <ContentTemplate>
+                                        <asp:Menu ID="Menu" DataSourceID="AdminSiteMapDataSource" runat="server" StaticDisplayLevels="1" Orientation="Horizontal" CssClass="topmenudrop" StaticMenuItemStyle-CssClass="dropmenunode" DynamicMenuItemStyle-CssClass="dynamicmenunode" StaticHoverStyle-BackColor="#ff3333" StaticHoverStyle-ForeColor="White" StaticSelectedStyle-BackColor="#ffe6e6" DynamicHoverStyle-BackColor="#f2f2f2" DynamicHoverStyle-ForeColor="red" DynamicSelectedStyle-ForeColor="red">
+                                        </asp:Menu>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+
+                            </RoleGroups>
+
+                        </asp:LoginView>
+                    </div>
+                </div>
+
+                <div id="masterright">
+                    <div id="loginNotVisib">
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            Witaj: Gość,
+                            <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Bold="True" />
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Witaj:
+                            <asp:LoginName ID="LoginName1" runat="server"  />
+
+                            <asp:LoginStatus ID="LoginStatus2" runat="server"  LogoutPageUrl="Logout.aspx" LogoutAction="Redirect" LogoutText="Wyloguj się" LoginText="Zaloguj się" />
+
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                        
+                    <br />
+                    <br />
+                        </div>
+                    WYBIERZ SWOJĄ GRUPĘ:
+                <br />
+                    <asp:DropDownList ID="countryDropDownList" runat="server" DataSourceID="SqlDataSource5"
+                        DataTextField="place" DataValueField="place" AutoPostBack="true" OnSelectedIndexChanged="countryDropDownList_SelectedIndexChanged" Width="90%" BackColor="#ffffe6">
+                    </asp:DropDownList>
+                    <br />
+                    <asp:Button ID="leaveGroupButton" CssClass="allButtons" runat="server" Text="Opuść grupę" OnClick="leaveGroupButton_Click" BackColor="#ffcccc" Width="50%" Font-Names="Book Antiqua" Font-Bold="true" ForeColor="#661616"/>
+                    <asp:CheckBox ID="leaveGroupCheckBox" runat="server" text="opuść" BackColor="#ffffe6" />
+                </div>
+                <div id="masterrightpicture">
+                    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+                        <ItemTemplate>
+
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/User/UserSettings.aspx">
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image").ToString() == "" ? "~/images/profile_pictures/NoImage.png" : Eval("image") %>' CssClass="masterprofilepicsettings" />
+                            </asp:HyperLink>
+                        </ItemTemplate>
+                    </asp:ListView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                        SelectCommand="SELECT [image] FROM [User] WHERE [username]=@username">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="userLabel" Name="username" PropertyName="Text" Type="String" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+
+                </div>
+
+
+            </div>
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [place] FROM [Group] WHERE ([username] = @username)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="userLabel" Name="username" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+
+            <div id="mainmaster">
+                <div id="masterhalf1">
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <div id="masterhalf2">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+﻿Wiadomość otrzymana od: <%Username%>
+<br/> 
+Mail użytkowanika do odpowiedzi: <%Mail%>
+<br/> <br/>
+<%MessageBody%>

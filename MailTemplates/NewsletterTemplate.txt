@@ -1,0 +1,9 @@
+﻿Cześć <%Username%>,
+<br/> <br/>
+Dawno się nie słyszeliśmy! Co nowego na polakzagranica.com?
+<br/> <br/>
+<%newslettertext%>
+<br/> <br/><br/>
+Pozdrawiamy!
+<br/>
+Załoga polakzagranica.com

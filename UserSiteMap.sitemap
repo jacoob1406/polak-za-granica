@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/User/UserMain.aspx" title="Strona główna"  description="">
+    <siteMapNode url="~/User/UserSettings.aspx" title="Ustawienia konta"  description="" />
+    <siteMapNode url="~/User/GroupAddCreate.aspx" title="Dodaj/stwórz grupę"  description="" />
+    <siteMapNode url="~/User/Messages.aspx" title="Wiadomości"  description="" />
+    <siteMapNode url="~/User/Friends.aspx" title="Znajomi"  description="" />
+  </siteMapNode>
+</siteMap>

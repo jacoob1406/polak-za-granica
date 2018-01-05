@@ -1,0 +1,9 @@
+﻿Cześć <%Username%>,
+<br/> <br/>
+Twoje konto na polakzagranica.com zostało dezaktywowane zgodnie z Twoją prośbą! 
+<br/> 
+Jeśli chciałbyś raz jeszcze do nas dołączyć załóż nowe konto lub odpowiedz na tego maila z prośbą o ponowną aktywację konta.
+<br/> 
+Powodzenia!
+<br/> <br/><br/>
+Załoga polakzagranica.com
